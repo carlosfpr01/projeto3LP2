@@ -10,10 +10,12 @@ public class Matricula {
     private int ano;
     private int semestre;
 
-    public Matricula( int ano,  int semestre, Aluno aluno, String matricula, Curso curso) {
-        this.matricula = matricula;
+    public Matricula(String m, int ano, int sem, Aluno a, Curso c) {
+        this.matricula = m;
         this.ano = ano;
-        this.semestre = semestre;
+        this.semestre = sem;
+        this.setAluno(a);
+        this.setCurso(c);
     }
 
     public String getMatricula() {
@@ -33,23 +35,23 @@ public class Matricula {
     }
 
     public Curso getCurso() {
-        return curso;
+        return this.getCurso();
     }
 
     public List<AnoSemestre> listAnoSemestres() {
         return anoSemestres;
     }
 
-    public void addAnoSemestre(int ano, int sem) {
-        anoSemestres.add(new AnoSemestre(ano, sem));
+    public void registraAnoSemestre(int ano, int sem) {
+        anoSemestres.add(new AnoSemestre(ano, sem, this));
     }
 
-    public void setAluno(Aluno aluno) {
-        this.aluno = aluno;
+    public void setAluno(Aluno a) {
+        this.aluno = a;
     }
 
-    public void setCurso(Curso curso) {
-        this.curso = curso;
+    public void setCurso(Curso c) {
+        this.curso = c;
     }
 
 }

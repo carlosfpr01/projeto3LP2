@@ -5,10 +5,10 @@ public class Disciplina {
     private String nome;
     private int cargaHoraria;
 
-    public Disciplina(String codigo, String nome, int cargaHoraria) {
-        this.codigo = codigo;
-        this.nome = nome;
-        this.cargaHoraria = cargaHoraria;
+    public Disciplina(String c, String n, int ch) {
+        this.codigo = c;
+        this.nome = n;
+        this.cargaHoraria = ch;
     }
 
     public String getCodigo() {

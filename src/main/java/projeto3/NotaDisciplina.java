@@ -3,8 +3,10 @@ package com.trabalho3;
 public class NotaDisciplina {
     private float nota;
 
-    protected NotaDisciplina(float nota, Disciplina disciplina) {
-        this.nota = nota;
+    protected NotaDisciplina(float n, Disciplina d, Situacao s) {
+        this.nota = n;
+        this.setDisciplina(d);
+        this.setSituacao(s);
     }
 
     public float getNota() {
@@ -15,15 +17,19 @@ public class NotaDisciplina {
         return disciplina;
     }
 
+    public Situacao getSituacao() {
+        return situacao;
+    }
+
     public AnoSemestre getAnoSemestre() {
         return anoSemestre;
     }
 
-    protected void setDisciplina(Disciplina disciplina) {
-        this.disciplina = disciplina;
-    }
-
     protected void setAnoSemestre(AnoSemestre anoSemestre) {
         this.anoSemestre = anoSemestre;
+    }
+
+    protected void setDisciplina(Disciplina disciplina) {
+        this.disciplina = disciplina;
     }
 }

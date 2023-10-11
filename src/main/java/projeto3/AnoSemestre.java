@@ -4,9 +4,10 @@ public class AnoSemestre {
     private int ano;
     private int semestre;
 
-    protected AnoSemestre(int ano, int semestre) {
+    protected AnoSemestre(int ano, int semestre, Matricula m) {
         this.ano = ano;
         this.semestre = semestre;
+        getMatricula(m);
     }
 
     public int getAno() {
@@ -21,7 +22,15 @@ public class AnoSemestre {
         return matricula;
     }
 
-    protected void setMatricula(Matricula matricula) {
-        this.matricula = matricula;
+    public NotaDisciplina registraNotaDisciplina(float n, Disciplina d, Situação s){
+        return new NotaDisciplina(n, d, s, this);
+    }
+
+    public List<NotaDisciplina> listNotaDisciplina(){
+        return notaDisciplina;
+    }
+
+    protected void setMatricula(Matricula m) {
+        this.matricula = m;
     }
 }
