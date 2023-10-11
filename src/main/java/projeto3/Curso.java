@@ -1,6 +1,7 @@
-package com.trabalho3;
+package projeto3;
 
 import java.util.List;
+import java.util.ArrayList;
 
 public class Curso {
     private String nome;
@@ -14,14 +15,14 @@ public class Curso {
     }
     
     public List<Disciplina> getDisciplina() {
-        return disciplina;
+        return this.getDisciplina();
     }
 
     public List<Matricula> getMatriculas() {
-        return matricula;
+        return this.getMatriculas();
     }
 
     public void incluiDisciplina(Disciplina d) {
-        disciplina.add(d);
+        Disciplina disciplina = new Disciplina(d.getCodigo(), d.getNome(), d.getCargaHoraria());
     }
 }

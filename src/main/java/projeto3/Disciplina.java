@@ -1,4 +1,8 @@
-package com.trabalho3;
+package projeto3;
+
+import java.util.List;
+import java.util.ArrayList;
+
 
 public class Disciplina {
     private String codigo;

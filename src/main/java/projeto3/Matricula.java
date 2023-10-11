@@ -1,8 +1,7 @@
-package com.trabalho3;
+package projeto3; 
 
 import java.util.List;
-
-import com.trabalho3.Aluno;
+import java.util.ArrayList;
 
 public class Matricula {
     
@@ -39,19 +38,19 @@ public class Matricula {
     }
 
     public List<AnoSemestre> listAnoSemestres() {
-        return anoSemestres;
+        return this.listAnoSemestres();
     }
 
     public void registraAnoSemestre(int ano, int sem) {
-        anoSemestres.add(new AnoSemestre(ano, sem, this));
+        AnoSemestre anoSemestre = new AnoSemestre(ano, sem, this);
     }
 
     public void setAluno(Aluno a) {
-        this.aluno = a;
+        Aluno aluno = new Aluno(a.getCpf(), a.getNome());
     }
 
     public void setCurso(Curso c) {
-        this.curso = c;
+        Curso curso = new Curso();
     }
 
 }

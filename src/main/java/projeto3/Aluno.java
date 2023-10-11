@@ -1,6 +1,7 @@
-package com.trabalho3;
+package projeto3;
 
 import java.util.List;
+import java.util.ArrayList;
 
 public class Aluno {
     private String cpf;
@@ -20,10 +21,10 @@ public class Aluno {
     }
 
     public List<Matricula> getMatriculas() {
-        return matricula;
+        return getMatriculas();
     }
 
     protected void adicionaMatricula(Matricula m) {
-        matricula.add(m);
+        getMatriculas().add(m);
     }
 }

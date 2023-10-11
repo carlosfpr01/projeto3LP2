@@ -1,4 +1,7 @@
-package com.trabalho3;
+package projeto3;
+
+import java.util.List;
+import java.util.ArrayList;
 
 public class AnoSemestre {
     private int ano;
@@ -7,7 +10,7 @@ public class AnoSemestre {
     protected AnoSemestre(int ano, int semestre, Matricula m) {
         this.ano = ano;
         this.semestre = semestre;
-        getMatricula(m);
+        this.setMatricula(m);
     }
 
     public int getAno() {
@@ -19,18 +22,18 @@ public class AnoSemestre {
     }
 
     public Matricula getMatricula() {
-        return matricula;
+        return this.getMatricula();
     }
 
-    public NotaDisciplina registraNotaDisciplina(float n, Disciplina d, Situação s){
-        return new NotaDisciplina(n, d, s, this);
+    public NotaDisciplina registraNotaDisciplina(float n, Disciplina d, Situacao s){
+        return new NotaDisciplina(n, d, s);
     }
 
     public List<NotaDisciplina> listNotaDisciplina(){
-        return notaDisciplina;
+        return this.listNotaDisciplina();
     }
 
     protected void setMatricula(Matricula m) {
-        this.matricula = m;
+        Matricula matricula = new Matricula(m.getMatricula(), m.getAno(), m.getSemestre(), m.getAluno(), m.getCurso());
     }
 }
