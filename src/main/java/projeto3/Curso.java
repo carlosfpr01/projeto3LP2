@@ -1,13 +1,12 @@
 package projeto3;
 
 import java.util.List;
-import java.util.ArrayList;
 
 public class Curso {
     private String nome;
 
-    public void Curso(String nome) {
-        this.nome = nome;
+    public void Curso(String n) {
+        this.nome = n;
     }
 
     public String getNome() {
@@ -23,6 +22,6 @@ public class Curso {
     }
 
     public void incluiDisciplina(Disciplina d) {
-        Disciplina disciplina = new Disciplina(d.getCodigo(), d.getNome(), d.getCargaHoraria());
+       new Disciplina(d.getCodigo(), d.getNome(), d.getCargaHoraria());
     }
 }

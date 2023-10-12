@@ -1,7 +1,6 @@
 package projeto3;
 
 import java.util.List;
-import java.util.ArrayList;
 
 public class AnoSemestre {
     private int ano;
@@ -34,6 +33,6 @@ public class AnoSemestre {
     }
 
     protected void setMatricula(Matricula m) {
-        Matricula matricula = new Matricula(m.getMatricula(), m.getAno(), m.getSemestre(), m.getAluno(), m.getCurso());
+        new Matricula(m.getMatricula(), m.getAno(), m.getSemestre(), m.getAluno(), m.getCurso());
     }
 }

@@ -1,7 +1,6 @@
 package projeto3; 
 
 import java.util.List;
-import java.util.ArrayList;
 
 public class Matricula {
     
@@ -42,15 +41,15 @@ public class Matricula {
     }
 
     public void registraAnoSemestre(int ano, int sem) {
-        AnoSemestre anoSemestre = new AnoSemestre(ano, sem, this);
+        new AnoSemestre(ano, sem, this);
     }
 
     public void setAluno(Aluno a) {
-        Aluno aluno = new Aluno(a.getCpf(), a.getNome());
+        new Aluno(a.getCpf(), a.getNome());
     }
 
     public void setCurso(Curso c) {
-        Curso curso = new Curso();
+        new Curso();
     }
 
 }
