@@ -3,12 +3,17 @@ package projeto3;
 
 public class NotaDisciplina {
     private float nota;
+    private Situacao situacao;
 
     protected NotaDisciplina(float n, Disciplina d, Situacao s) {
         this.nota = n;
         this.setDisciplina(d);
+        if (s != null) {
+            throw new RuntimeException("Situacao não pode ser nula");
+        }else{
+            this.situacao = s;
+        }
     }
-
     public float getNota() {
         return nota;
     }
@@ -30,6 +35,10 @@ public class NotaDisciplina {
     }
 
     protected void setDisciplina(Disciplina d) {
-        Disciplina disciplina = new Disciplina(d.getCodigo(), d.getNome(), d.getCargaHoraria());
+        if(d == null) {
+            throw new RuntimeException("Disciplina não pode ser nula");
+        }else{
+            this.setDisciplina(d);
+        }
     }
 }

@@ -5,7 +5,7 @@ import java.util.List;
 public class Curso {
     private String nome;
 
-    public void Curso(String n) {
+    public Curso(String n) {
         this.nome = n;
     }
 
@@ -23,5 +23,9 @@ public class Curso {
 
     public void incluiDisciplina(Disciplina d) {
        new Disciplina(d.getCodigo(), d.getNome(), d.getCargaHoraria());
+    }
+
+    public void incluiMatricula(Matricula m) {
+        this.getMatriculas().add(m);
     }
 }

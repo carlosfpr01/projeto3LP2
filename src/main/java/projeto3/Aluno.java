@@ -26,4 +26,5 @@ public class Aluno {
     protected void adicionaMatricula(Matricula m) {
         getMatriculas().add(m);
     }
+
 }

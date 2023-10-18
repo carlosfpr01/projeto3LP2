@@ -7,6 +7,8 @@ public class Matricula {
     private String matricula;
     private int ano;
     private int semestre;
+    private Aluno aluno;
+    private Curso curso;
 
     public Matricula(String m, int ano, int sem, Aluno a, Curso c) {
         this.matricula = m;
@@ -29,11 +31,11 @@ public class Matricula {
     }
 
     public Aluno getAluno() {
-        return this.getAluno();
+        return this.aluno;
     }
 
     public Curso getCurso() {
-        return this.getCurso();
+        return this.curso;
     }
 
     public List<AnoSemestre> listAnoSemestres() {
@@ -44,12 +46,21 @@ public class Matricula {
         new AnoSemestre(ano, sem, this);
     }
 
-    public void setAluno(Aluno a) {
-        new Aluno(a.getCpf(), a.getNome());
+    protected void setAluno(Aluno a) {
+        if(a == null) {
+            throw new RuntimeException("Aluno não pode ser nulo");
+        }else{
+            this.aluno = a;
+        }
+       
     }
 
-    public void setCurso(Curso c) {
-        new Curso();
+    protected void setCurso(Curso c) {
+        if(c == null) {
+            throw new RuntimeException("Aluno não pode ser nulo");
+        }else{
+            this.curso = c;
+        }
     }
 
 }

@@ -6,9 +6,9 @@ public class AnoSemestre {
     private int ano;
     private int semestre;
 
-    protected AnoSemestre(int ano, int semestre, Matricula m) {
-        this.ano = ano;
-        this.semestre = semestre;
+    protected AnoSemestre(int a, int s, Matricula m) {
+        this.ano = a;
+        this.semestre = s;
         this.setMatricula(m);
     }
 
