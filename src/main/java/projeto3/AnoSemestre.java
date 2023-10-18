@@ -5,6 +5,8 @@ import java.util.List;
 public class AnoSemestre {
     private int ano;
     private int semestre;
+    private Matricula matricula;
+    private List<NotaDisciplina> notas;
 
     protected AnoSemestre(int a, int s, Matricula m) {
         this.ano = a;
@@ -25,7 +27,10 @@ public class AnoSemestre {
     }
 
     public NotaDisciplina registraNotaDisciplina(float n, Disciplina d, Situacao s){
-        return new NotaDisciplina(n, d, s);
+        NotaDisciplina notaD = new NotaDisciplina(n, d, s);
+        notaD.setAnoSemestre(this);
+        this.notas.add(notaD);
+        return notaD;
     }
 
     public List<NotaDisciplina> listNotaDisciplina(){
@@ -33,6 +38,10 @@ public class AnoSemestre {
     }
 
     protected void setMatricula(Matricula m) {
-        new Matricula(m.getMatricula(), m.getAno(), m.getSemestre(), m.getAluno(), m.getCurso());
+        if(m == null) {
+            throw new RuntimeException("Matricula não pode ser nula");
+        }else{
+            this.matricula = m;
+        }
     }
 }
